@@ -1,5 +1,5 @@
-import ReadBooks from "./components/read";
-import NotReadBooks from "./components/not-read";
+import ReadBooks from "./components/read-books";
+import NotReadBooks from "./components/not-read-books";
 
 function App() {
   return (
