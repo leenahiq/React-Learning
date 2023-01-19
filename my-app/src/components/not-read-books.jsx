@@ -5,7 +5,6 @@ export default function NotReadBooks() {
       <ol>
         <li>Power of thinking big</li>
         <li>Rich dad poor dad</li>
-        <li>Positive mind </li>
       </ol>
     </div>
   );
