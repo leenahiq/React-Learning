@@ -13,7 +13,8 @@ this documentation will guide
 - For more components one folder called component has been created.
 - So far 2 components has been created ReadBooks in readbook.js and NotReadBooks in not-read-books.js.
 
-````export default function ReadBooks() {
+```
+export default function ReadBooks() {
 return (
  <div>
  <h2>List of books (read)</h2>
@@ -23,10 +24,12 @@ return (
  </ol>
  </div>
  );
- }```
+ }
+```
 
- export default function NotReadBooks() {
-  return (
+export default function NotReadBooks() {
+return (
+
   <div>
   <h2>List of books (not read yet)</h2>
   <ol>
