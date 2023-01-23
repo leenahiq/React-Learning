@@ -89,25 +89,24 @@ and APP component look like this
 
 ```
  import BookList from "./components/book-list";
+  const readBookData = {
+   heading: "Read Books",
+  books: ["Just JavaScript", "My Little Pony"],
+  };
+  const notReadBookData = {
+  heading: "Not Read Books",
+  books: ["Power of thinking big", "Rich dad poor dad", "some book 3"],
+  };
+  function App() {
+  return (
 
-      const readBookData = {
-      heading: "Read Books",
-      books: ["Just JavaScript", "My Little Pony"],
-      };
-      const notReadBookData = {
-      heading: "Not Read Books",
-      books: ["Power of thinking big", "Rich dad poor dad", "some book 3"],
-      };
-      function App() {
-      return (
-
-      <div className="App">
-      <h1> Books </h1>
-      <BookList {...readBookData} />
-      <BookList {...notReadBookData} />
-      </div>
-      );
-      }
+  <div className="App">
+  <h1> Books </h1>
+  <BookList {...readBookData} />
+  <BookList {...notReadBookData} />
+  </div>
+  );
+  }
 ```
 
 refactored:code
