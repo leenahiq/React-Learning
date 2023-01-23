@@ -11,4 +11,4 @@ just a data passed into the component
 When creating a list in the UI from an array with JSX, you should add a key prop to each child and to any of its’ children.
 
 Ex:` <li key="uniqueId1" >Item1</li>`
-https://sentry.io/answers/unique-key-prop/ firther reading
+[further reading](https://sentry.io/answers/unique-key-prop/)
