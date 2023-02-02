@@ -1,4 +1,5 @@
 import BookList from "./components/book-list";
+import { useState } from "react"; //importing setState function from react
 
 const readBookData = {
   heading: "Read Books",
@@ -8,24 +9,24 @@ const notReadBookData = {
   heading: "Not Read Books",
   books: ["Power of thinking big", "Rich dad poor dad", "some book 3"],
 };
+
 function App() {
+  const [colour, setColour] = useState("green"); //react hook
+  const onClickHandler = () => {
+    colour === "blue" ? setColour("red") : setColour("blue");
+
+    console.log("clicked");
+  };
   return (
     <div className="App">
       <h1> Books </h1>
       <BookList {...readBookData} />
       <BookList {...notReadBookData} />
+      <button style={{ backgroundColor: colour }} onClick={onClickHandler}>
+        toggle
+      </button>
     </div>
   );
 }
 
 export default App;
-
-// to do
-//input field which take text and on submit store information in number list in Readbook
-//Component and same for NotReadComponents
-//refactor props
-//refactor List
-// how can we use array methods to list the books
-//problem to solve
-//using same component BookList
-//heading inside NotReadBooks
