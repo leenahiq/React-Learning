@@ -2,7 +2,7 @@
 
 ## why react over Vanilla JacaScript?
 
-## Hoe does Reacr work?
+## How does React work?
 
 ## what is Rendering?
 
