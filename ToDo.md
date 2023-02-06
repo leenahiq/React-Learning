@@ -1,6 +1,5 @@
 # To do
 
-- Create button component
 - Create an input component to add a book
 - Delete book
 
@@ -12,3 +11,4 @@
 - refactor List
 - how can we use array methods to list the books
 - Talked about States(to be continue..)
+- Create button component
