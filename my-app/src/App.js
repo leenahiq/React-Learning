@@ -12,13 +12,15 @@ const notReadBookData = {
 
 function App() {
   const [colour, setColour] = useState("green"); //react hook
+  const [newBook, setNewBook] = useState("");
+  console.log(newBook);
   const onClickHandler = () => {
     colour === "blue" ? setColour("red") : setColour("blue");
   };
   return (
     <div className="App">
       <h1> Books </h1>
-      <BookList {...readBookData} colour={colour} />
+      <BookList setNewBook={setNewBook} {...readBookData} colour={colour} />
       <BookList {...notReadBookData} />
       <Button colour={colour} onClickHandler={onClickHandler} />
     </div>
