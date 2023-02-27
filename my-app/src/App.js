@@ -1,4 +1,4 @@
-import { useState } from "react"; //importing setState function from react
+import { useState, useEffect } from "react"; //importing setState function from react
 import BookList from "./components/book-list";
 import Button from "./components/button";
 const readBookData = {
@@ -13,14 +13,21 @@ const notReadBookData = {
 function App() {
   const [colour, setColour] = useState("green"); //react hook
   const [newBook, setNewBook] = useState("");
-  console.log(newBook);
+
+  const addNewBook = (book) => {
+    console.log(newBook);
+    readBookData.books.push(book);
+    setColour("purple");
+    console.log(readBookData);
+  };
+
   const onClickHandler = () => {
     colour === "blue" ? setColour("red") : setColour("blue");
   };
   return (
     <div className="App">
       <h1> Books </h1>
-      <BookList setNewBook={setNewBook} {...readBookData} colour={colour} />
+      <BookList addNewBook={addNewBook} {...readBookData} colour={colour} />
       <BookList {...notReadBookData} />
       <Button colour={colour} onClickHandler={onClickHandler} />
     </div>
