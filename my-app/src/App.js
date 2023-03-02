@@ -1,24 +1,31 @@
-import { useState, useEffect } from "react"; //importing setState function from react
+import { useState } from "react"; //importing setState function from react
 import BookList from "./components/book-list";
 import Button from "./components/button";
-const readBookData = {
-  heading: "Read Books",
-  books: ["Just JavaScript", "My Little Pony"],
-};
-const notReadBookData = {
-  heading: "Not Read Books",
-  books: ["Power of thinking big", "Rich dad poor dad", "some book 3"],
-};
 
 function App() {
   const [colour, setColour] = useState("green"); //react hook
-  const [newBook, setNewBook] = useState("");
+  const [readBookData, setNewBook] = useState({
+    heading: "Read Books",
+    books: ["Just JavaScript", "My Little Pony"],
+  });
+
+  const [notReadBookData, setNotReadBookData] = useState({
+    heading: "Not Read Books",
+    books: ["Power of thinking big", "Rich dad poor dad", "some book 3"],
+  });
 
   const addNewBook = (book) => {
-    console.log(newBook);
-    readBookData.books.push(book);
-    setColour("purple");
+    const { heading, books } = readBookData;
+    books.push(book);
+    setNewBook({ heading: heading, books: books });
     console.log(readBookData);
+  };
+
+  const addNotReadNewBook = (book) => {
+    const { heading, books } = notReadBookData;
+    books.push(book);
+    setNewBook({ heading: heading, books: books });
+    console.log(notReadBookData);
   };
 
   const onClickHandler = () => {
@@ -27,8 +34,12 @@ function App() {
   return (
     <div className="App">
       <h1> Books </h1>
-      <BookList addNewBook={addNewBook} {...readBookData} colour={colour} />
-      <BookList {...notReadBookData} />
+      <BookList
+        addABookFunction={addNewBook}
+        {...readBookData}
+        colour={colour}
+      />
+      <BookList {...notReadBookData} addABookFunction={addNotReadNewBook} />
       <Button colour={colour} onClickHandler={onClickHandler} />
     </div>
   );
