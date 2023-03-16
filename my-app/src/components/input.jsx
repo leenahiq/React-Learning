@@ -5,6 +5,7 @@ const Input = ({ addNewBook }) => {
   const onSubmitHandler = (event) => {
     event.preventDefault(); //will stop submit button to refresh the page. event is a object get created in browser when yoou interact with page.
     addNewBook(input);
+    setInput("");
   };
 
   const onChangeHandler = (event) => {
@@ -14,6 +15,7 @@ const Input = ({ addNewBook }) => {
     <>
       <form onSubmit={onSubmitHandler}>
         <input
+          value={input}
           onChange={onChangeHandler}
           type="text"
           placeholder="Type your book here"

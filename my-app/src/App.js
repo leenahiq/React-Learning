@@ -18,14 +18,19 @@ function App() {
     const { heading, books } = readBookData;
     books.push(book);
     setNewBook({ heading: heading, books: books });
-    console.log(readBookData);
   };
 
+  const deleteNewBook = (book) => {
+    //delete book from books array
+    const { heading, books } = readBookData;
+    const filteredBooks = books.filter((item) => item === book);
+
+    console.log(filteredBooks);
+  };
   const addNotReadNewBook = (book) => {
     const { heading, books } = notReadBookData;
     books.push(book);
-    setNewBook({ heading: heading, books: books });
-    console.log(notReadBookData);
+    setNotReadBookData({ heading: heading, books: books });
   };
 
   const onClickHandler = () => {
@@ -38,6 +43,7 @@ function App() {
         addABookFunction={addNewBook}
         {...readBookData}
         colour={colour}
+        deleteBook={deleteNewBook}
       />
       <BookList {...notReadBookData} addABookFunction={addNotReadNewBook} />
       <Button colour={colour} onClickHandler={onClickHandler} />
